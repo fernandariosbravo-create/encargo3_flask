@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Encargo 3 - Flask{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1 class="brand">Encargo 3 · Programación Web (Flask)</h1>
+      <nav class="nav">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('ejercicio1') }}">Ejercicio 1</a>
+        <a href="{{ url_for('ejercicio2') }}">Ejercicio 2</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <small>Proyecto Flask - Templates + Static</small>
+    </div>
+  </footer>
+</body>
+</html>

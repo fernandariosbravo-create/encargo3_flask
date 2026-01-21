@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Ejercicio 1 - Notas y Asistencia{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Ejercicio 1</h2>
+  <p>Ingresa 3 notas (10 a 70) y una asistencia (0 a 100).</p>
+
+  <form method="POST" class="form">
+    <label>Nota 1</label>
+    <input type="number" name="nota1" min="10" max="70" step="0.01" required>
+
+    <label>Nota 2</label>
+    <input type="number" name="nota2" min="10" max="70" step="0.01" required>
+
+    <label>Nota 3</label>
+    <input type="number" name="nota3" min="10" max="70" step="0.01" required>
+
+    <label>Asistencia (%)</label>
+    <input type="number" name="asistencia" min="0" max="100" step="0.01" required>
+
+    <button type="submit" class="btn">Enviar</button>
+  </form>
+
+  {% if error %}
+    <div class="alert alert-error">{{ error }}</div>
+  {% endif %}
+
+  {% if resultado %}
+    <div class="result">
+      <h3>Resultado</h3>
+      <p><strong>Promedio:</strong> {{ resultado.promedio }}</p>
+      <p><strong>Asistencia:</strong> {{ resultado.asistencia }}%</p>
+      <p><strong>Estado:</strong> {{ resultado.estado }}</p>
+      <p class="muted">{{ resultado.detalle }}</p>
+    </div>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Inicio - Encargo 3{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Menú principal</h2>
+  <p>Selecciona un ejercicio para abrir su formulario.</p>
+
+  <div class="btn-row">
+    <a class="btn" href="{{ url_for('ejercicio1') }}">Ejercicio 1</a>
+    <a class="btn btn-secondary" href="{{ url_for('ejercicio2') }}">Ejercicio 2</a>
+  </div>
+</section>
+{% endblock %}

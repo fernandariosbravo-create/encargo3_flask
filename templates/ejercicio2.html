@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block title %}Ejercicio 2 - Nombre más largo{% endblock %}
+
+{% block content %}
+<section class="card">
+  <h2>Ejercicio 2</h2>
+  <p>Ingresa 3 nombres diferentes. Se mostrará el nombre con más caracteres y cuántos tiene.</p>
+
+  <form method="POST" class="form">
+    <label>Nombre 1</label>
+    <input type="text" name="nombre1" required>
+
+    <label>Nombre 2</label>
+    <input type="text" name="nombre2" required>
+
+    <label>Nombre 3</label>
+    <input type="text" name="nombre3" required>
+
+    <button type="submit" class="btn btn-secondary">Enviar</button>
+  </form>
+
+  {% if error %}
+    <div class="alert alert-error">{{ error }}</div>
+  {% endif %}
+
+  {% if resultado %}
+    <div class="result">
+      <h3>Resultado</h3>
+      <p><strong>Nombre más largo:</strong> {{ resultado.nombre }}</p>
+      <p><strong>Cantidad de caracteres:</strong> {{ resultado.cantidad }}</p>
+      {% if resultado.empate %}
+        <p class="muted">{{ resultado.empate }}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+</section>
+{% endblock %}
